@@ -1,0 +1,25 @@
+{
+	"_method_": {},
+	"cs.withoutErrorHandlers": {
+		"error": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		}
+	},
+	"error": {
+		"throwError()": {
+			"Syntax": "**.throwError**( *trace* : Boolean )",
+			"Params": [
+				[
+					"trace",
+					"Boolean",
+					"->"
+				]
+			],
+			"Summary": ""
+		}
+	}
+}

@@ -1,0 +1,642 @@
+{
+	"destination": "detailScreen",
+	"windowMinWidth": 800,
+	"windowMaxWidth": 32000,
+	"windowMinHeight": 540,
+	"windowMaxHeight": 32000,
+	"width": 960,
+	"height": 640,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 920,
+					"height": 560,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "objTabs",
+					"dataSourceTypeHint": "object",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button": {
+					"type": "button",
+					"top": 600,
+					"left": 790,
+					"width": 70,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/Cancel"
+					},
+					"action": "cancel",
+					"shortcutKey": "[Esc]",
+					"text": "Cancel",
+					"class": "Buttons_13",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button1": {
+					"type": "button",
+					"top": 600,
+					"left": 870,
+					"width": 70,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/OK"
+					},
+					"action": "accept",
+					"shortcutKey": "[Enter]",
+					"text": "OK",
+					"class": "Buttons_13",
+					"defaultButton": true,
+					"events": [
+						"onClick"
+					]
+				},
+				"Line": {
+					"type": "line",
+					"top": 0,
+					"left": 480,
+					"height": 640,
+					"visibility": "hidden",
+					"sizingY": "grow",
+					"stroke": "#800080",
+					"strokeDashArray": "1 1"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 80,
+					"left": 80,
+					"width": 800,
+					"height": 480,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "Infos[0].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": 80,
+					"left": 480,
+					"width": 440,
+					"height": 480,
+					"visibility": "hidden",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "transparent",
+					"stroke": "#9400D3",
+					"strokeDashArray": "1 1"
+				},
+				"Group Box": {
+					"type": "groupBox",
+					"text": "",
+					"top": 108,
+					"left": 542,
+					"width": 318,
+					"height": 80
+				},
+				"information2": {
+					"type": "input",
+					"top": 80,
+					"left": 40,
+					"width": 420,
+					"height": 480,
+					"sizingY": "grow",
+					"dataSource": "Infos[1].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"btnTrace": {
+					"type": "checkbox",
+					"text": "Trace code",
+					"top": 600,
+					"left": 652,
+					"width": 110,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace",
+					"sizingX": "move",
+					"sizingY": "move",
+					"enterable": true,
+					"focusable": false,
+					"dataSourceTypeHint": "boolean"
+				},
+				"Radio Button": {
+					"type": "radio",
+					"text": "Defined",
+					"top": 149,
+					"left": 560,
+					"width": 96,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"radioGroup": "localErrorHandler",
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.localDefined",
+					"method": "ObjectMethods/Radio Button.4dm"
+				},
+				"Radio Button1": {
+					"type": "radio",
+					"text": "Undefined",
+					"top": 149,
+					"left": 701,
+					"width": 96,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"radioGroup": "localErrorHandler",
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.localUndefined",
+					"method": "ObjectMethods/Radio Button1.4dm"
+				},
+				"Group Box1": {
+					"type": "groupBox",
+					"text": "",
+					"top": 252,
+					"left": 542,
+					"width": 318,
+					"height": 79
+				},
+				"Radio Button2": {
+					"type": "radio",
+					"text": "Defined",
+					"top": 293,
+					"left": 560,
+					"width": 96,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"radioGroup": "globalErrorHandler",
+					"dataSource": "Form:C1466.globalDefined",
+					"method": "ObjectMethods/Radio Button2.4dm"
+				},
+				"Radio Button3": {
+					"type": "radio",
+					"text": "Undefined",
+					"top": 293,
+					"left": 701,
+					"width": 96,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"radioGroup": "globalErrorHandler",
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.globalUndefined",
+					"method": "ObjectMethods/Radio Button3.4dm"
+				},
+				"Button2": {
+					"type": "button",
+					"text": "Generate an error in the current process",
+					"top": 396,
+					"left": 542,
+					"width": 318,
+					"height": 34,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button2.4dm"
+				},
+				"Text": {
+					"type": "text",
+					"text": "Global error handler:",
+					"top": 269,
+					"left": 560,
+					"width": 137,
+					"height": 16
+				},
+				"Button3": {
+					"type": "button",
+					"text": "Generate an error in a new process",
+					"top": 464,
+					"left": 542,
+					"width": 318,
+					"height": 33,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button3.4dm"
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Local error handler:",
+					"top": 124,
+					"left": 560,
+					"width": 126,
+					"height": 16
+				},
+				"localHandler": {
+					"type": "input",
+					"left": 682,
+					"top": 124,
+					"width": 178,
+					"height": 17,
+					"contextMenu": "none",
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dataSource": "Method called on error:C704(ek local:K92:1)",
+					"fontWeight": "bold"
+				},
+				"localHandler1": {
+					"type": "input",
+					"left": 688,
+					"top": 269,
+					"width": 172,
+					"height": 17,
+					"contextMenu": "none",
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dataSource": "Method called on error:C704(ek global:K92:2)",
+					"fontWeight": "bold"
+				}
+			},
+			"entryOrder": [
+				"information2",
+				"Radio Button",
+				"Radio Button1",
+				"Radio Button2",
+				"Radio Button3",
+				"btnTrace",
+				"Button2",
+				"Button3",
+				"localHandler",
+				"localHandler1"
+			]
+		},
+		{
+			"objects": {
+				"information1": {
+					"type": "input",
+					"top": 80,
+					"left": 500,
+					"width": 420,
+					"height": 480,
+					"sizingX": "move",
+					"sizingY": "grow",
+					"dataSource": "Infos[2].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Rectangle1": {
+					"type": "rectangle",
+					"top": 80,
+					"left": 40,
+					"width": 440,
+					"height": 480,
+					"visibility": "hidden",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "transparent",
+					"stroke": "#9400D3",
+					"strokeDashArray": "1 1"
+				},
+				"Button4": {
+					"type": "button",
+					"text": "Generate an error in the WithGlobalErrorHandler component",
+					"top": 100,
+					"left": 53,
+					"width": 407,
+					"height": 36,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button4.4dm"
+				},
+				"btnTrace1": {
+					"type": "checkbox",
+					"text": "Trace code",
+					"top": 600,
+					"left": 652,
+					"width": 110,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace",
+					"sizingX": "move",
+					"sizingY": "move",
+					"enterable": true,
+					"focusable": false,
+					"dataSourceTypeHint": "boolean"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information3": {
+					"type": "input",
+					"top": 80,
+					"left": 500,
+					"width": 420,
+					"height": 480,
+					"sizingX": "move",
+					"sizingY": "grow",
+					"dataSource": "Infos[3].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Rectangle2": {
+					"type": "rectangle",
+					"top": 80,
+					"left": 40,
+					"width": 440,
+					"height": 480,
+					"visibility": "hidden",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "transparent",
+					"stroke": "#9400D3",
+					"strokeDashArray": "1 1"
+				},
+				"Button6": {
+					"type": "button",
+					"text": "Generate an error in the WithoutErrorHandlers component",
+					"top": 398,
+					"left": 53,
+					"width": 407,
+					"height": 36,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button6.4dm"
+				},
+				"Group Box2": {
+					"type": "groupBox",
+					"text": "",
+					"top": 185,
+					"left": 53,
+					"width": 407,
+					"height": 72
+				},
+				"Radio Button4": {
+					"type": "radio",
+					"text": "Defined",
+					"top": 224,
+					"left": 66,
+					"width": 96,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"radioGroup": "errorComponentHandler",
+					"dataSource": "Form:C1466.componentDefined",
+					"method": "ObjectMethods/Radio Button4.4dm"
+				},
+				"Radio Button5": {
+					"type": "radio",
+					"text": "Undefined",
+					"top": 224,
+					"left": 261,
+					"width": 96,
+					"height": 24,
+					"events": [
+						"onClick"
+					],
+					"radioGroup": "errorComponentHandler",
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.componentUndefined",
+					"method": "ObjectMethods/Radio Button5.4dm"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Errors from components handler:",
+					"top": 200,
+					"left": 66,
+					"width": 205,
+					"height": 16
+				},
+				"btnTrace2": {
+					"type": "checkbox",
+					"text": "Trace code",
+					"top": 600,
+					"left": 652,
+					"width": 110,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "Form:C1466.trace",
+					"sizingX": "move",
+					"sizingY": "move",
+					"enterable": true,
+					"focusable": false,
+					"dataSourceTypeHint": "boolean"
+				},
+				"localHandler2": {
+					"type": "input",
+					"left": 268,
+					"top": 200,
+					"width": 187,
+					"height": 17,
+					"contextMenu": "none",
+					"enterable": false,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"dataSource": "Method called on error:C704(ek errors from components:K92:3)",
+					"fontWeight": "bold"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information4": {
+					"type": "input",
+					"top": 80,
+					"left": 40,
+					"width": 880,
+					"height": 129,
+					"sizingY": "grow",
+					"dataSource": "Infos[4].Description",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"List Box1": {
+					"type": "listbox",
+					"left": 40,
+					"top": 238,
+					"width": 880,
+					"height": 315,
+					"events": [
+						"onClick",
+						"onHeaderClick",
+						"onDataChange",
+						"onSelectionChange"
+					],
+					"dataSource": "Form:C1466.errors",
+					"listboxType": "collection",
+					"rowHeightAutoMin": "1em",
+					"rowHeightAutoMax": "1600em",
+					"columns": [
+						{
+							"header": {
+								"text": "Error",
+								"name": "Header4"
+							},
+							"name": "Column4",
+							"footer": {
+								"name": "Footer4"
+							},
+							"dataSource": "This:C1470.errCode",
+							"width": 60,
+							"textAlign": "left",
+							"minWidth": 60,
+							"maxWidth": 60
+						},
+						{
+							"header": {
+								"name": "Header5",
+								"text": "Component"
+							},
+							"name": "Column5",
+							"footer": {
+								"name": "Footer5"
+							},
+							"dataSource": "This:C1470.componentSignature",
+							"width": 96,
+							"minWidth": 96,
+							"maxWidth": 96
+						},
+						{
+							"header": {
+								"name": "Header6",
+								"text": "Message"
+							},
+							"name": "Column6",
+							"footer": {
+								"name": "Footer6"
+							},
+							"dataSource": "This:C1470.message",
+							"width": 708,
+							"rowHeightAuto": true
+						}
+					]
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"groups": {
+			"Group": [
+				"Group Box",
+				"Radio Button",
+				"Radio Button1",
+				"localHandler"
+			],
+			"Group1": [
+				"Group Box1",
+				"Radio Button2",
+				"Radio Button3",
+				"Text",
+				"localHandler1"
+			],
+			"Group2": [
+				"Group Box2",
+				"Radio Button4",
+				"Radio Button5",
+				"Text2",
+				"localHandler2"
+			]
+		},
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"geometryStamp": 338
+}
